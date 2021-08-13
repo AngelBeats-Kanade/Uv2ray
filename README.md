@@ -1,4 +1,4 @@
-# v2rayU
+# Uv2ray
 This is a Universal Windows Platform application, which is a frontend of [v2ray-core](https://github.com/v2fly/v2ray-core/releases).
 ## How to use
 + You can download this app form **Microsoft Store**.
