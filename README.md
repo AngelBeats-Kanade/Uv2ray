@@ -1,5 +1,5 @@
 # v2rayU
-This is a Universal Windows Platform application, which is a frontend of v2ray-core.
+This is a Universal Windows Platform application, which is a frontend of [v2ray-core](https://github.com/v2fly/v2ray-core/releases).
 ## How to use
 + You can download this app form **Microsoft Store**.
 + Or install **Visual Studio 2022** preview edition.
