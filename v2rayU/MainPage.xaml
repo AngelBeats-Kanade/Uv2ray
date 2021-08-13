@@ -9,6 +9,19 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <NavigationView Name="MyNavigtionView" IsBackButtonVisible="Collapsed" ItemInvoked="MyNavigationView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Name="Home" Icon="Home" Content="Home"/>
+                <NavigationViewItem Name="Add" Icon="Add" Content="Add Server"/>
+            </NavigationView.MenuItems>
 
+            <NavigationView.Header>
+                <TextBlock Name="TitleTextBlock" Text="Title"/>
+            </NavigationView.Header>
+
+            <NavigationView.Content>
+                <Frame Name="MyFrame" Loaded="MyFrame_Loaded"/>
+            </NavigationView.Content>
+        </NavigationView>
     </Grid>
 </Page>
