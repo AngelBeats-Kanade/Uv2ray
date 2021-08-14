@@ -9,6 +9,28 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <NavigationView Name="MyNavigationView" IsBackButtonVisible="Collapsed" ItemInvoked="MyNavigationView_ItemInvoked">
+            <NavigationView.PaneHeader>
+                <Image Source="/Assets/horizontal.png" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </NavigationView.PaneHeader>
+            
+            <NavigationView.MenuItems>
+                <NavigationViewItem Name="Home" Icon="Home" Content="Home"/>
+                <NavigationViewItem Name="Server" Icon="Globe" Content="Servers"/>
+                <NavigationViewItem Name="Subscription" Icon="Send" Content="Subscription"/>
+            </NavigationView.MenuItems>
 
+            <NavigationView.PaneFooter>
+                <NavigationViewItem Name="Help" Icon="Help" Content="Help"/>
+            </NavigationView.PaneFooter>
+            
+            <NavigationView.Header>
+                <TextBlock Name="TitleTextBlock" Text="Title"/>
+            </NavigationView.Header>
+
+            <NavigationView.Content>
+                <Frame/>
+            </NavigationView.Content>
+        </NavigationView>
     </Grid>
 </Page>

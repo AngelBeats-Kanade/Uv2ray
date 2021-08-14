@@ -26,5 +26,10 @@ namespace Uv2ray
         {
             this.InitializeComponent();
         }
+
+        private void MyNavigationView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            
+        }
     }
 }
