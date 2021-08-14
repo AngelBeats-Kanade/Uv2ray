@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    Loaded="Page_Loaded"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
@@ -13,23 +14,20 @@
             <NavigationView.PaneHeader>
                 <Image Source="/Assets/horizontal.png" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             </NavigationView.PaneHeader>
-            
+
             <NavigationView.MenuItems>
                 <NavigationViewItem Name="Home" Icon="Home" Content="Home"/>
-                <NavigationViewItem Name="Server" Icon="Globe" Content="Servers"/>
+                <NavigationViewItem Name="Server" Icon="Globe" Content="Server"/>
                 <NavigationViewItem Name="Subscription" Icon="Send" Content="Subscription"/>
+                <NavigationViewItem Name="Help" Icon="Help" Content="Help"/>
             </NavigationView.MenuItems>
 
-            <NavigationView.PaneFooter>
-                <NavigationViewItem Name="Help" Icon="Help" Content="Help"/>
-            </NavigationView.PaneFooter>
-            
             <NavigationView.Header>
-                <TextBlock Name="TitleTextBlock" Text="Title"/>
+                <TextBlock Name="TitleTextBlock" Text="Title" FontSize="32"/>
             </NavigationView.Header>
 
             <NavigationView.Content>
-                <Frame/>
+                <Frame Name="ContentFrame" Loaded="ContentFrame_Loaded" NavigationFailed="ContentFrame_NavigationFailed"/>
             </NavigationView.Content>
         </NavigationView>
     </Grid>
