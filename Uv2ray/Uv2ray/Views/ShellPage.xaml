@@ -20,12 +20,13 @@
 
     <winui:NavigationView
         x:Name="navigationView"
-        Background="{ThemeResource SystemControlBackgroundAltHighBrush}"
+        Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"
         ExpandedModeThresholdWidth="1280"
         IsBackButtonVisible="Visible"
         IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
         IsSettingsVisible="True"
         SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}">
+
         <winui:NavigationView.MenuItems>
             <!--
                 TODO WTS: Change the symbols for each item as appropriate for your app
@@ -54,7 +55,7 @@
                     <DataTemplate>
                         <Grid>
                             <TextBlock
-                                Margin="{StaticResource SmallLeftRightMargin}"
+                                Margin="{StaticResource SmallTopBottomMargin}"
                                 Style="{ThemeResource TitleTextBlockStyle}"
                                 Text="{Binding}" />
                         </Grid>

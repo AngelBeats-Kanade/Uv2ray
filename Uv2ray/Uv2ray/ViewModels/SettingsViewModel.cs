@@ -7,6 +7,7 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 using Uv2ray.Helpers;
 using Uv2ray.Services;
+using Uv2ray.Behaviors;
 
 using Windows.ApplicationModel;
 using Windows.UI.Xaml;
@@ -20,18 +21,26 @@ namespace Uv2ray.ViewModels
 
         public ElementTheme ElementTheme
         {
-            get { return _elementTheme; }
+            get => _elementTheme;
 
-            set { SetProperty(ref _elementTheme, value); }
+            set => SetProperty(ref _elementTheme, value);
+        }
+
+        private NavigationViewHeaderMode _navigationViewHeadeerMode;
+
+        public NavigationViewHeaderMode NavigationViewHeaderMode
+        {
+            get => _navigationViewHeadeerMode;
+            set => SetProperty(ref _navigationViewHeadeerMode, value);
         }
 
         private string _versionDescription;
 
         public string VersionDescription
         {
-            get { return _versionDescription; }
+            get => _versionDescription;
 
-            set { SetProperty(ref _versionDescription, value); }
+            set => SetProperty(ref _versionDescription, value);
         }
 
         private Uri _githubUri;
@@ -40,6 +49,22 @@ namespace Uv2ray.ViewModels
         {
             get => _githubUri;
             set => SetProperty(ref _githubUri, value);
+        }
+
+        private string _imageSource;
+
+        public string ImageSource
+        {
+            get => _imageSource;
+            set => SetProperty(ref _imageSource, value);
+        }
+
+        private string _copyRight;
+
+        public string CopyRight
+        {
+            get => _copyRight;
+            set => SetProperty(ref _copyRight, value);
         }
 
         private ICommand _switchThemeCommand;
@@ -93,6 +118,9 @@ namespace Uv2ray.ViewModels
         {
             VersionDescription = GetVersionDescription();
             GithubUri = GetGithubUri();
+            ImageSource = GetImageSource();
+            CopyRight = GetCopyRight();
+            NavigationViewHeaderMode = GetNavigationViewHeaderMode();
             await Task.CompletedTask;
         }
 
@@ -109,6 +137,21 @@ namespace Uv2ray.ViewModels
         private Uri GetGithubUri()
         {
             return new Uri("https://github.com/AngelBeats-Kanade/Uv2ray");
+        }
+
+        private string GetImageSource()
+        {
+            return string.Format("ms-appx:///Assets/horizontal.png");
+        }
+
+        private string GetCopyRight()
+        {
+            return string.Format("Copyright © 2021 AngelBeats-Kanade");
+        }
+
+        private NavigationViewHeaderMode GetNavigationViewHeaderMode()
+        {
+            return NavigationViewHeaderMode.Minimal;
         }
     }
 }

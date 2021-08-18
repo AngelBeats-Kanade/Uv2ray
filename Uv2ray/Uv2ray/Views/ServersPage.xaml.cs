@@ -19,7 +19,7 @@ namespace Uv2ray.Views
 
         private async void ServersPage_Loaded(object sender, RoutedEventArgs e)
         {
-            await ViewModel.LoadDataAsync(ListDetailsViewControl.ViewState);
+            await ViewModel.InitializeAsync(ListDetailsViewControl.ViewState);
         }
     }
 }

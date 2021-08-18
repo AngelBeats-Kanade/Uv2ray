@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Uv2ray")]
-[assembly: AssemblyCopyright("Copyright ©AngelBeats-Kanade  2021")]
+[assembly: AssemblyCopyright("Copyright © 2021 AngelBeats-Kanade")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

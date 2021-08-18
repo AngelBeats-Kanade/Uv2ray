@@ -3,6 +3,7 @@
 using Uv2ray.ViewModels;
 
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace Uv2ray.Views
 {
@@ -13,6 +14,11 @@ namespace Uv2ray.Views
         public HomePage()
         {
             InitializeComponent();
+        }
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            await ViewModel.InitializeAsync();
         }
     }
 }

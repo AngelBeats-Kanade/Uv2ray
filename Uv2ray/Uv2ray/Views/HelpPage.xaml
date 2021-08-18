@@ -7,9 +7,10 @@
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    behaviors:NavigationViewHeaderBehavior.HeaderMode="Minimal"
+    behaviors:NavigationViewHeaderBehavior.HeaderMode="{x:Bind ViewModel.NavigationViewHeaderMode}"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
+
     <Page.Resources>
         <Style x:Key="BrowserButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />

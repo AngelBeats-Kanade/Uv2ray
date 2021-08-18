@@ -4,6 +4,8 @@ using System.Windows.Input;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 
+using Uv2ray.Behaviors;
+
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -13,6 +15,14 @@ namespace Uv2ray.ViewModels
     {
         // TODO WTS: Set the URI of the page to show by default
         private const string DefaultUrl = "https://www.v2fly.org/";
+
+        private NavigationViewHeaderMode _navigationViewHeaderMode;
+
+        public NavigationViewHeaderMode NavigationViewHeaderMode
+        {
+            get => _navigationViewHeaderMode;
+            set => SetProperty(ref _navigationViewHeaderMode, value);
+        }
 
         private Uri _source;
 
@@ -214,8 +224,14 @@ namespace Uv2ray.ViewModels
             Source = new Uri(DefaultUrl);
         }
 
+        private NavigationViewHeaderMode GetNavigationViewHeaderMode()
+        {
+            return NavigationViewHeaderMode.Minimal;
+        }
+
         public void Initialize(WebView webView)
         {
+            NavigationViewHeaderMode = GetNavigationViewHeaderMode();
             _webView = webView;
         }
     }

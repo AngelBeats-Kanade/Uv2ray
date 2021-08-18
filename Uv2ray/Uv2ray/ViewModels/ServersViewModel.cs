@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Uwp.UI.Controls;
 
+using Uv2ray.Behaviors;
+
 using Uv2ray.Core.Models;
 using Uv2ray.Core.Services;
 
@@ -21,10 +23,25 @@ namespace Uv2ray.ViewModels
             set { SetProperty(ref _selected, value); }
         }
 
+        private NavigationViewHeaderMode _navigationViewHeaderMode;
+
+        public NavigationViewHeaderMode NavigationViewHeaderMode
+        {
+            get => _navigationViewHeaderMode;
+            set => SetProperty(ref _navigationViewHeaderMode, value);
+        }
+
         public ObservableCollection<SampleOrder> SampleItems { get; private set; } = new ObservableCollection<SampleOrder>();
 
         public ServersViewModel()
         {
+        }
+
+        public async Task InitializeAsync(ListDetailsViewState viewState)
+        {
+            NavigationViewHeaderMode = GetNavigationViewHeaderMode();
+            await LoadDataAsync(viewState);
+            await Task.CompletedTask;
         }
 
         public async Task LoadDataAsync(ListDetailsViewState viewState)
@@ -42,6 +59,11 @@ namespace Uv2ray.ViewModels
             {
                 Selected = SampleItems.First();
             }
+        }
+
+        private NavigationViewHeaderMode GetNavigationViewHeaderMode()
+        {
+            return NavigationViewHeaderMode.Minimal;
         }
     }
 }
