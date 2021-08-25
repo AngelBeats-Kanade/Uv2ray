@@ -26,12 +26,12 @@ namespace Uv2ray.ViewModels
             set => SetProperty(ref _elementTheme, value);
         }
 
-        private NavigationViewHeaderMode _navigationViewHeadeerMode;
+        private NavigationViewHeaderMode _navigationViewHeaderMode;
 
         public NavigationViewHeaderMode NavigationViewHeaderMode
         {
-            get => _navigationViewHeadeerMode;
-            set => SetProperty(ref _navigationViewHeadeerMode, value);
+            get => _navigationViewHeaderMode;
+            set => SetProperty(ref _navigationViewHeaderMode, value);
         }
 
         private string _versionDescription;
@@ -151,7 +151,7 @@ namespace Uv2ray.ViewModels
 
         private NavigationViewHeaderMode GetNavigationViewHeaderMode()
         {
-            return NavigationViewHeaderMode.Minimal;
+            return NavigationViewHeaderMode.Always;
         }
     }
 }

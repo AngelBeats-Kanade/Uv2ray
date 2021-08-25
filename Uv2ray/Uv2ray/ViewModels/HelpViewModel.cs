@@ -13,7 +13,6 @@ namespace Uv2ray.ViewModels
 {
     public class HelpViewModel : ObservableObject
     {
-        // TODO WTS: Set the URI of the page to show by default
         private const string DefaultUrl = "https://www.v2fly.org/";
 
         private NavigationViewHeaderMode _navigationViewHeaderMode;
@@ -28,18 +27,15 @@ namespace Uv2ray.ViewModels
 
         public Uri Source
         {
-            get { return _source; }
-            set { SetProperty(ref _source, value); }
+            get => _source;
+            set => SetProperty(ref _source, value);
         }
 
         private bool _isLoading;
 
         public bool IsLoading
         {
-            get
-            {
-                return _isLoading;
-            }
+            get => _isLoading;
 
             set
             {
@@ -57,18 +53,15 @@ namespace Uv2ray.ViewModels
 
         public Visibility IsLoadingVisibility
         {
-            get { return _isLoadingVisibility; }
-            set { SetProperty(ref _isLoadingVisibility, value); }
+            get => _isLoadingVisibility;
+            set => SetProperty(ref _isLoadingVisibility, value);
         }
 
         private bool _isShowingFailedMessage;
 
         public bool IsShowingFailedMessage
         {
-            get
-            {
-                return _isShowingFailedMessage;
-            }
+            get => _isShowingFailedMessage;
 
             set
             {
@@ -86,8 +79,8 @@ namespace Uv2ray.ViewModels
 
         public Visibility FailedMesageVisibility
         {
-            get { return _failedMesageVisibility; }
-            set { SetProperty(ref _failedMesageVisibility, value); }
+            get => _failedMesageVisibility;
+            set => SetProperty(ref _failedMesageVisibility, value);
         }
 
         private ICommand _navCompleted;

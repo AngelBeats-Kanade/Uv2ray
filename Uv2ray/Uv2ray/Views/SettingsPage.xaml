@@ -66,9 +66,21 @@
                     Source="{x:Bind ViewModel.ImageSource}" />
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Uid="Settings_Version" Margin="{StaticResource SmallRightMargin}" />
-                    <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.VersionDescription, Mode=OneWay}" />
+                    <TextBlock
+                        x:Uid="Settings_Version"
+                        Margin="{StaticResource SmallRightMargin}"
+                        Foreground="DarkGray" />
+                    <TextBlock
+                        Foreground="DarkGray"
+                        Style="{ThemeResource BodyTextBlockStyle}"
+                        Text="{x:Bind ViewModel.VersionDescription, Mode=OneWay}" />
                 </StackPanel>
+
+                <TextBlock
+                    Margin="{StaticResource XSmallTopMargin}"
+                    Foreground="DarkGray"
+                    Style="{ThemeResource BodyTextBlockStyle}"
+                    Text="{x:Bind ViewModel.CopyRight}" />
 
                 <TextBlock
                     x:Uid="Settings_AboutDescription"
@@ -77,20 +89,39 @@
                     HorizontalAlignment="Left"
                     Style="{ThemeResource BodyTextBlockStyle}" />
 
-                <TextBlock Margin="{StaticResource XSmallTopMargin}" Text="{x:Bind ViewModel.CopyRight}" />
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton
+                        Margin="{StaticResource XSmallTopMargin}"
+                        Content="Github"
+                        NavigateUri="{x:Bind ViewModel.GithubUri}" />
 
-                <HyperlinkButton
-                    Margin="{StaticResource XSmallTopMargin}"
-                    Content="Github"
-                    NavigateUri="{x:Bind ViewModel.GithubUri}" />
+                    <FontIcon
+                        Margin="8,8,0,0"
+                        FontFamily="Segoe MDL2 Assets"
+                        Glyph="&#xE72D;" />
+                </StackPanel>
 
-                <HyperlinkButton x:Uid="Settings_LicenseLink" Margin="{StaticResource XSmallTopMargin}" />
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton x:Uid="Settings_LicenseLink" Margin="{StaticResource XSmallTopMargin}" />
 
-                <HyperlinkButton
-                    x:Uid="FeedbackHub_Link"
-                    Margin="{StaticResource XSmallTopMargin}"
-                    Command="{x:Bind ViewModel.LaunchFeedbackHubCommand}"
-                    Visibility="{x:Bind ViewModel.FeedbackLinkVisibility}" />
+                    <FontIcon
+                        Margin="8,8,0,0"
+                        FontFamily="Segoe MDL2 Assets"
+                        Glyph="&#xE72D;" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton
+                        x:Uid="FeedbackHub_Link"
+                        Margin="{StaticResource XSmallTopMargin}"
+                        Command="{x:Bind ViewModel.LaunchFeedbackHubCommand}"
+                        Visibility="{x:Bind ViewModel.FeedbackLinkVisibility}" />
+
+                    <FontIcon
+                        Margin="8,8,0,0"
+                        FontFamily="Segoe MDL2 Assets"
+                        Glyph="&#xE939;" />
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Grid>

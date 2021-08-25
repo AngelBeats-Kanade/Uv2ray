@@ -126,7 +126,7 @@
     <comment>Application display name</comment>
   </data>
   <data name="FeedbackHub_Link.Content" xml:space="preserve">
-    <value>反馈</value>
+    <value>提供有关此应用的反馈</value>
     <comment>Displayed as the link to launching the Feedback Hub.</comment>
   </data>
   <data name="FirstRunDialog.PrimaryButtonText" xml:space="preserve">
@@ -228,19 +228,19 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
     <comment>Choose theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>暗</value>
     <comment>Dark theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Default.Content" xml:space="preserve">
-    <value>Windows default</value>
+    <value>使用系统主题</value>
     <comment>Windows default theme text for Settings</comment>
   </data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>亮</value>
     <comment>Light theme text for Settings</comment>
   </data>
   <data name="Settings_Version.Text" xml:space="preserve">
-    <value>版本:</value>
+    <value>应用版本</value>
   </data>
   <data name="Shell_Help.Content" xml:space="preserve">
     <value>帮助</value>

@@ -19,8 +19,8 @@ namespace Uv2ray.Behaviors
 
         public object DefaultHeader
         {
-            get { return GetValue(DefaultHeaderProperty); }
-            set { SetValue(DefaultHeaderProperty, value); }
+            get => GetValue(DefaultHeaderProperty);
+            set => SetValue(DefaultHeaderProperty, value);
         }
 
         public static readonly DependencyProperty DefaultHeaderProperty = DependencyProperty.Register("DefaultHeader", typeof(object), typeof(NavigationViewHeaderBehavior), new PropertyMetadata(null, (d, e) => _current.UpdateHeader()));

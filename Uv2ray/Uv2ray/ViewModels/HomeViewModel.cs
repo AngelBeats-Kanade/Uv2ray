@@ -9,21 +9,20 @@ namespace Uv2ray.ViewModels
 {
     public class HomeViewModel : ObservableObject
     {
-        private NavigationViewHeaderMode _navigationViewHeadeerMode;
+        private NavigationViewHeaderMode _navigationViewHeaderMode;
 
         public NavigationViewHeaderMode NavigationViewHeaderMode
         {
-            get => _navigationViewHeadeerMode;
-            set => SetProperty(ref _navigationViewHeadeerMode, value);
+            get => _navigationViewHeaderMode;
+            set => SetProperty(ref _navigationViewHeaderMode, value);
         }
         public HomeViewModel()
         {
         }
 
-        public async Task InitializeAsync()
+        public void Initialize()
         {
             NavigationViewHeaderMode = GetNavigationViewHeaderMode();
-            await Task.CompletedTask;
         }
 
         private NavigationViewHeaderMode GetNavigationViewHeaderMode()

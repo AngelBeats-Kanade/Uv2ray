@@ -14,11 +14,8 @@ namespace Uv2ray.Views
         public HomePage()
         {
             InitializeComponent();
-        }
-
-        protected override async void OnNavigatedTo(NavigationEventArgs e)
-        {
-            await ViewModel.InitializeAsync();
+            DataContext = ViewModel;
+            ViewModel.Initialize();
         }
     }
 }

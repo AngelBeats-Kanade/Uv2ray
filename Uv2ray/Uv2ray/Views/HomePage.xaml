@@ -8,12 +8,21 @@
     behaviors:NavigationViewHeaderBehavior.HeaderMode="{x:Bind ViewModel.NavigationViewHeaderMode}"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--
-                The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content.
-                Place your content here.
-            -->
-        </Grid>
+    <Grid
+        x:Name="ContentArea"
+        Margin="{StaticResource MediumLeftRightMargin}"
+        Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Button x:Uid="HomeButton"/>
+        </StackPanel>
+
+        <ListView Grid.Column="1" >
+            
+        </ListView>
     </Grid>
 </Page>

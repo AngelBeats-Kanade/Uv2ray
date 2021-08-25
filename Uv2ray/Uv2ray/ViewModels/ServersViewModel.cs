@@ -19,8 +19,8 @@ namespace Uv2ray.ViewModels
 
         public SampleOrder Selected
         {
-            get { return _selected; }
-            set { SetProperty(ref _selected, value); }
+            get => _selected;
+            set => SetProperty(ref _selected, value);
         }
 
         private NavigationViewHeaderMode _navigationViewHeaderMode;
@@ -35,11 +35,11 @@ namespace Uv2ray.ViewModels
 
         public ServersViewModel()
         {
+            NavigationViewHeaderMode = GetNavigationViewHeaderMode();
         }
 
         public async Task InitializeAsync(ListDetailsViewState viewState)
         {
-            NavigationViewHeaderMode = GetNavigationViewHeaderMode();
             await LoadDataAsync(viewState);
             await Task.CompletedTask;
         }

@@ -108,7 +108,7 @@ namespace Uv2ray.ViewModels
                 return;
             }
 
-            var selectedItem = GetSelectedItem(_navigationView.MenuItems, e.SourcePageType);
+            var selectedItem = GetSelectedItem(_navigationView.MenuItems, e.SourcePageType) ?? GetSelectedItem(_navigationView.FooterMenuItems, e.SourcePageType);
             if (selectedItem != null)
             {
                 Selected = selectedItem;
