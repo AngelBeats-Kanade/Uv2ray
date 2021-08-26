@@ -93,7 +93,10 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <WebView x:Name="webView" Source="{x:Bind ViewModel.Source, Mode=OneWay}">
+        <WebView
+            x:Name="webView"
+            Margin="{StaticResource LargeTopMargin}"
+            Source="{x:Bind ViewModel.Source, Mode=OneWay}">
             <i:Interaction.Behaviors>
                 <ic:EventTriggerBehavior EventName="NavigationCompleted">
                     <ic:InvokeCommandAction Command="{x:Bind ViewModel.NavCompletedCommand}" />
@@ -155,5 +158,18 @@
                 </Button>
             </StackPanel>
         </Grid>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="641" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="webView.Margin" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>

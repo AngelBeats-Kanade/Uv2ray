@@ -1,10 +1,7 @@
-﻿using System;
-
-using Uv2ray.ViewModels;
+﻿using Uv2ray.ViewModels;
 
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
 
 namespace Uv2ray.Views
 {

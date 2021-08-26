@@ -1,7 +1,4 @@
-﻿using System;
-
-using Uv2ray.Core.Services;
-using Uv2ray.ViewModels;
+﻿using Uv2ray.ViewModels;
 
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using Uv2ray.Core.Helpers;
 using Uv2ray.Services;
 
 using Windows.ApplicationModel.Activation;

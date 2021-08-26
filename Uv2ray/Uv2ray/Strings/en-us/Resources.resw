@@ -273,4 +273,8 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
   <data name="Settings_Version.Text" xml:space="preserve">
     <value>Version:</value>
   </data>
+  <data name="HomeButton.Content" xml:space="preserve">
+    <value>添加</value>
+    <comment>Add button content</comment>
+  </data>
 </root>

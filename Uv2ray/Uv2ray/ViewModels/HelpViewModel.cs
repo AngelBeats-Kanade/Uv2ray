@@ -1,11 +1,8 @@
-﻿using System;
-using System.Windows.Input;
-
-using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
-
+using System;
+using System.Windows.Input;
 using Uv2ray.Behaviors;
-
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -219,7 +216,7 @@ namespace Uv2ray.ViewModels
 
         private NavigationViewHeaderMode GetNavigationViewHeaderMode()
         {
-            return NavigationViewHeaderMode.Minimal;
+            return NavigationViewHeaderMode.Never;
         }
 
         public void Initialize(WebView webView)

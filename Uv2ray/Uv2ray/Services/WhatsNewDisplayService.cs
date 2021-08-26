@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Microsoft.Toolkit.Uwp.Helpers;
 
-using Microsoft.Toolkit.Uwp.Helpers;
+using System;
+using System.Threading.Tasks;
 
 using Uv2ray.Views;
 

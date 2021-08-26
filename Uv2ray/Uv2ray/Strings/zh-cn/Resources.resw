@@ -195,6 +195,10 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
     <value>重试</value>
     <comment>Retry button for Help</comment>
   </data>
+  <data name="HomeButton.Content" xml:space="preserve">
+    <value>添加</value>
+    <comment>Add button content</comment>
+  </data>
   <data name="Servers.ListHeader" xml:space="preserve">
     <value>服务器</value>
     <comment>Title for ServersPage</comment>

@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:behaviors="using:Uv2ray.Behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:data="using:Uv2ray.Core.Models"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     behaviors:NavigationViewHeaderBehavior.HeaderMode="{x:Bind ViewModel.NavigationViewHeaderMode}"
     Style="{StaticResource PageStyle}"
@@ -18,11 +19,18 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <Button x:Uid="HomeButton"/>
+            <Button x:Uid="HomeButton" Command="{x:Bind ViewModel.AddButtonCommand}" />
         </StackPanel>
 
-        <ListView Grid.Column="1" >
-            
+        <ListView Grid.Column="1" ItemsSource="{x:Bind ViewModel.Servers}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="data:V2rayConfig">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="{StaticResource SmallLeftRightMargin}" Text="{x:Bind Outbounds[0].Settings.Vnext[0].Address}" />
+                        <TextBlock Margin="{StaticResource SmallLeftRightMargin}" Text="{x:Bind Outbounds[0].Settings.Vnext[0].Port}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </Page>

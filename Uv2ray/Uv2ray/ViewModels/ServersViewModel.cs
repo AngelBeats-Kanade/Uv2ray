@@ -1,13 +1,9 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Uwp.UI.Controls;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Uwp.UI.Controls;
-
 using Uv2ray.Behaviors;
-
 using Uv2ray.Core.Models;
 using Uv2ray.Core.Services;
 
@@ -44,7 +40,7 @@ namespace Uv2ray.ViewModels
             await Task.CompletedTask;
         }
 
-        public async Task LoadDataAsync(ListDetailsViewState viewState)
+        private async Task LoadDataAsync(ListDetailsViewState viewState)
         {
             SampleItems.Clear();
 
@@ -63,7 +59,7 @@ namespace Uv2ray.ViewModels
 
         private NavigationViewHeaderMode GetNavigationViewHeaderMode()
         {
-            return NavigationViewHeaderMode.Minimal;
+            return NavigationViewHeaderMode.Never;
         }
     }
 }

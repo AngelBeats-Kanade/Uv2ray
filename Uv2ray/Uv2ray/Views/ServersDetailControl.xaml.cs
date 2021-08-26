@@ -1,6 +1,4 @@
-﻿using System;
-
-using Uv2ray.Core.Models;
+﻿using Uv2ray.Core.Models;
 
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;

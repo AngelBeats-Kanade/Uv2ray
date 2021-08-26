@@ -1,14 +1,11 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
-
+using Uv2ray.Behaviors;
 using Uv2ray.Helpers;
 using Uv2ray.Services;
-using Uv2ray.Behaviors;
-
 using Windows.ApplicationModel;
 using Windows.UI.Xaml;
 
