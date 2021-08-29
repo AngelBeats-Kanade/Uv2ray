@@ -11,7 +11,6 @@ namespace Uv2ray.Views
         public HomePage()
         {
             InitializeComponent();
-            DataContext = ViewModel;
             ViewModel.Initialize();
         }
     }

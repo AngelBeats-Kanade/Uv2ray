@@ -1,13 +1,19 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
+
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
+
 using Uv2ray.Behaviors;
 using Uv2ray.Helpers;
 using Uv2ray.Services;
+
 using Windows.ApplicationModel;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace Uv2ray.ViewModels
 {
@@ -19,8 +25,15 @@ namespace Uv2ray.ViewModels
         public ElementTheme ElementTheme
         {
             get => _elementTheme;
-
             set => SetProperty(ref _elementTheme, value);
+        }
+
+        private bool _isOn = StartupTaskService.IsOn;
+
+        public bool IsOn
+        {
+            get => _isOn;
+            set => SetProperty(ref _isOn, value);
         }
 
         private NavigationViewHeaderMode _navigationViewHeaderMode;
@@ -119,6 +132,15 @@ namespace Uv2ray.ViewModels
             CopyRight = GetCopyRight();
             NavigationViewHeaderMode = GetNavigationViewHeaderMode();
             await Task.CompletedTask;
+        }
+
+        public async void SwitchStartupTask(object sender, RoutedEventArgs e)
+        {
+            ToggleSwitch toggleSwitch = sender as ToggleSwitch;
+            if (toggleSwitch != null)
+            {
+                await StartupTaskService.SetStartupTaskAsync(toggleSwitch.IsOn);
+            }
         }
 
         private string GetVersionDescription()

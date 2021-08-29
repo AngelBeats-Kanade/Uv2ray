@@ -4,8 +4,9 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
   xmlns:genTemplate="http://schemas.microsoft.com/appx/developer/windowsTemplateStudio"
-  IgnorableNamespaces="uap mp genTemplate">
+  IgnorableNamespaces="uap uap5 mp genTemplate">
 
   <Identity
     Name="52CCD20C-ABBC-4058-938A-12BECBE70EEB"
@@ -16,7 +17,7 @@
 
   <Properties>
     <DisplayName>Uv2ray</DisplayName>
-    <PublisherDisplayName>24457</PublisherDisplayName>
+    <PublisherDisplayName>AngelBeats</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -43,6 +44,15 @@
       </uap:VisualElements>
 
       <Extensions>
+        <uap5:Extension
+          Category="windows.startupTask"
+          Executable="Uv2ray.exe"
+          EntryPoint="Uv2ray.App">
+          <uap5:StartupTask
+            DisplayName="Uv2ray"
+            Enabled="true"
+            TaskId="Uv2ray"/>
+        </uap5:Extension>
       </Extensions>
     </Application>
   </Applications>

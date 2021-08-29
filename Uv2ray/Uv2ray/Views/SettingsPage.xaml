@@ -14,115 +14,129 @@
         <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
     </Page.Resources>
 
-    <Grid Margin="{StaticResource MediumLeftRightMargin}">
-        <StackPanel x:Name="ContentArea">
-            <TextBlock
-                x:Uid="Settings_Personalization"
-                Margin="{StaticResource SmallTopMargin}"
-                Style="{ThemeResource SubtitleTextBlockStyle}" />
-            <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
-                <TextBlock x:Uid="Settings_Theme" />
+    <ScrollViewer>
+        <Grid Margin="{StaticResource MediumLeftRightMargin}">
+            <StackPanel x:Name="ContentArea">
+                <TextBlock
+                    x:Uid="Settings_Personalization"
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{ThemeResource SubtitleTextBlockStyle}" />
+
+                <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                    <TextBlock x:Uid="Settings_Theme" />
+
+                    <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                        <RadioButton
+                            x:Uid="Settings_Theme_Light"
+                            Command="{x:Bind ViewModel.SwitchThemeCommand}"
+                            FontSize="15"
+                            GroupName="AppTheme"
+                            IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}">
+                            <RadioButton.CommandParameter>
+                                <xaml:ElementTheme>Light</xaml:ElementTheme>
+                            </RadioButton.CommandParameter>
+                        </RadioButton>
+                        <RadioButton
+                            x:Uid="Settings_Theme_Dark"
+                            Command="{x:Bind ViewModel.SwitchThemeCommand}"
+                            FontSize="15"
+                            GroupName="AppTheme"
+                            IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}">
+                            <RadioButton.CommandParameter>
+                                <xaml:ElementTheme>Dark</xaml:ElementTheme>
+                            </RadioButton.CommandParameter>
+                        </RadioButton>
+                        <RadioButton
+                            x:Uid="Settings_Theme_Default"
+                            Command="{x:Bind ViewModel.SwitchThemeCommand}"
+                            FontSize="15"
+                            GroupName="AppTheme"
+                            IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}">
+                            <RadioButton.CommandParameter>
+                                <xaml:ElementTheme>Default</xaml:ElementTheme>
+                            </RadioButton.CommandParameter>
+                        </RadioButton>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock
+                    x:Uid="Settings_Startup"
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{ThemeResource SubtitleTextBlockStyle}" />
+
+                <ToggleSwitch
+                    x:Uid="Settings_ToggleSwitch"
+                    Margin="{StaticResource SmallTopBottomMargin}"
+                    IsOn="{x:Bind ViewModel.IsOn, Mode=OneWay}"
+                    Toggled="{x:Bind ViewModel.SwitchStartupTask}" />
+
+                <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
 
                 <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                    <RadioButton
-                        x:Uid="Settings_Theme_Light"
-                        Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                        FontSize="15"
-                        GroupName="AppTheme"
-                        IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}">
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Light</xaml:ElementTheme>
-                        </RadioButton.CommandParameter>
-                    </RadioButton>
-                    <RadioButton
-                        x:Uid="Settings_Theme_Dark"
-                        Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                        FontSize="15"
-                        GroupName="AppTheme"
-                        IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}">
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Dark</xaml:ElementTheme>
-                        </RadioButton.CommandParameter>
-                    </RadioButton>
-                    <RadioButton
-                        x:Uid="Settings_Theme_Default"
-                        Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                        FontSize="15"
-                        GroupName="AppTheme"
-                        IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}">
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Default</xaml:ElementTheme>
-                        </RadioButton.CommandParameter>
-                    </RadioButton>
-                </StackPanel>
-            </StackPanel>
+                    <Image
+                        Width="200"
+                        HorizontalAlignment="Left"
+                        Source="{x:Bind ViewModel.ImageSource}" />
 
-            <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            x:Uid="Settings_Version"
+                            Margin="{StaticResource SmallRightMargin}"
+                            Foreground="DarkGray" />
+                        <TextBlock
+                            Foreground="DarkGray"
+                            Style="{ThemeResource BodyTextBlockStyle}"
+                            Text="{x:Bind ViewModel.VersionDescription, Mode=OneWay}" />
+                    </StackPanel>
 
-            <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                <Image
-                    Width="200"
-                    HorizontalAlignment="Left"
-                    Source="{x:Bind ViewModel.ImageSource}" />
-
-                <StackPanel Orientation="Horizontal">
                     <TextBlock
-                        x:Uid="Settings_Version"
-                        Margin="{StaticResource SmallRightMargin}"
-                        Foreground="DarkGray" />
-                    <TextBlock
+                        Margin="{StaticResource XSmallTopMargin}"
                         Foreground="DarkGray"
                         Style="{ThemeResource BodyTextBlockStyle}"
-                        Text="{x:Bind ViewModel.VersionDescription, Mode=OneWay}" />
-                </StackPanel>
+                        Text="{x:Bind ViewModel.CopyRight}" />
 
-                <TextBlock
-                    Margin="{StaticResource XSmallTopMargin}"
-                    Foreground="DarkGray"
-                    Style="{ThemeResource BodyTextBlockStyle}"
-                    Text="{x:Bind ViewModel.CopyRight}" />
-
-                <TextBlock
-                    x:Uid="Settings_AboutDescription"
-                    MaxWidth="500"
-                    Margin="{StaticResource XSmallTopMargin}"
-                    HorizontalAlignment="Left"
-                    Style="{ThemeResource BodyTextBlockStyle}" />
-
-                <StackPanel Orientation="Horizontal">
-                    <HyperlinkButton
+                    <TextBlock
+                        x:Uid="Settings_AboutDescription"
+                        MaxWidth="500"
                         Margin="{StaticResource XSmallTopMargin}"
-                        Content="Github"
-                        NavigateUri="{x:Bind ViewModel.GithubUri}" />
+                        HorizontalAlignment="Left"
+                        Style="{ThemeResource BodyTextBlockStyle}" />
 
-                    <FontIcon
-                        Margin="8,8,0,0"
-                        FontFamily="Segoe MDL2 Assets"
-                        Glyph="&#xE72D;" />
-                </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <HyperlinkButton
+                            Margin="{StaticResource XSmallTopMargin}"
+                            Content="Github"
+                            NavigateUri="{x:Bind ViewModel.GithubUri}" />
 
-                <StackPanel Orientation="Horizontal">
-                    <HyperlinkButton x:Uid="Settings_LicenseLink" Margin="{StaticResource XSmallTopMargin}" />
+                        <FontIcon
+                            Margin="8,8,0,0"
+                            FontFamily="Segoe MDL2 Assets"
+                            Glyph="&#xE72D;" />
+                    </StackPanel>
 
-                    <FontIcon
-                        Margin="8,8,0,0"
-                        FontFamily="Segoe MDL2 Assets"
-                        Glyph="&#xE72D;" />
-                </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <HyperlinkButton x:Uid="Settings_LicenseLink" Margin="{StaticResource XSmallTopMargin}" />
 
-                <StackPanel Orientation="Horizontal">
-                    <HyperlinkButton
-                        x:Uid="FeedbackHub_Link"
-                        Margin="{StaticResource XSmallTopMargin}"
-                        Command="{x:Bind ViewModel.LaunchFeedbackHubCommand}"
-                        Visibility="{x:Bind ViewModel.FeedbackLinkVisibility}" />
+                        <FontIcon
+                            Margin="8,8,0,0"
+                            FontFamily="Segoe MDL2 Assets"
+                            Glyph="&#xE72D;" />
+                    </StackPanel>
 
-                    <FontIcon
-                        Margin="8,8,0,0"
-                        FontFamily="Segoe MDL2 Assets"
-                        Glyph="&#xE939;" />
+                    <StackPanel Orientation="Horizontal">
+                        <HyperlinkButton
+                            x:Uid="FeedbackHub_Link"
+                            Margin="{StaticResource XSmallTopMargin}"
+                            Command="{x:Bind ViewModel.LaunchFeedbackHubCommand}"
+                            Visibility="{x:Bind ViewModel.FeedbackLinkVisibility}" />
+
+                        <FontIcon
+                            Margin="8,8,0,0"
+                            FontFamily="Segoe MDL2 Assets"
+                            Glyph="&#xE939;" />
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
-    </Grid>
+        </Grid>
+    </ScrollViewer>
 </Page>

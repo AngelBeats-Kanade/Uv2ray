@@ -9,20 +9,34 @@
     behaviors:NavigationViewHeaderBehavior.HeaderMode="{x:Bind ViewModel.NavigationViewHeaderMode}"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <Grid
-        x:Name="ContentArea"
-        Margin="{StaticResource MediumLeftRightMargin}"
-        Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <Button x:Uid="HomeButton" Command="{x:Bind ViewModel.AddButtonCommand}" />
+            <Button
+                x:Uid="HomeAddButton"
+                Margin="{StaticResource SmallLeftTopRightBottomMargin}"
+                Command="{x:Bind ViewModel.AddButtonCommand}" />
+            <Button
+                x:Uid="HomeDeleteButton"
+                Margin="{StaticResource SmallLeftTopRightBottomMargin}"
+                Command="{x:Bind ViewModel.DeleteButtonCommand}" />
         </StackPanel>
 
-        <ListView Grid.Column="1" ItemsSource="{x:Bind ViewModel.Servers}">
+        <ListView
+            Grid.Column="1"
+            IsItemClickEnabled="True"
+            ItemClick="{x:Bind ViewModel.ListView_ItemClick}"
+            ItemsSource="{x:Bind ViewModel.Servers}"
+            SelectionMode="Single">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:V2rayConfig">
                     <StackPanel Orientation="Horizontal">
@@ -32,5 +46,14 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="{StaticResource SmallLeftTopRightBottomMargin}"
+            Style="{StaticResource DetailBodyStyle}"
+            TextWrapping="Wrap">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </TextBlock>
     </Grid>
 </Page>

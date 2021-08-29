@@ -66,6 +66,7 @@ namespace Uv2ray.Services
             await Singleton<LiveTileService>.Instance.EnableQueueAsync().ConfigureAwait(false);
             await Singleton<BackgroundTaskService>.Instance.RegisterBackgroundTasksAsync().ConfigureAwait(false);
             await ThemeSelectorService.InitializeAsync().ConfigureAwait(false);
+            await StartupTaskService.InitializeAsync().ConfigureAwait(false);
         }
 
         private async Task HandleActivationAsync(object activationArgs)
